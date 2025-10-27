@@ -1,14 +1,6 @@
 # =====================================================
 # My Zsh config
 # ===================================================
-
-# If Oh My Zsh is not installed, exit
-# (This .zshrc will be applied AFTER Oh My Zsh is installed)
-# But just in case, it's good practice
-if [ -z "$ZSH" ]; then
-    return
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
