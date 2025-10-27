@@ -1,19 +1,24 @@
 #!/bin/bash
 set -e
 
-# Определяем директорию скрипта, чтобы найти библиотеку
+# --- Preparation ---
+# Determine the script's directory to find our config file and the helper library
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 source "$SCRIPT_DIR/../lib/helpers.sh"
 
-echo "⚙️ Настройка Tmux..."
+echo "🚀 Setting up Tmux..."
 
+# --- Step 1: Install Tmux ---
 if command_exists tmux; then
-    echo "✅ Tmux уже установлен."
+    echo "✅ Tmux is already installed."
 else
-    echo "📥 Устанавливаем tmux..."
-    sudo apt-get update && sudo apt-get install -y tmux
+    echo "📥 Installing tmux..."
+    sudo apt-get update -q && sudo apt-get install -y tmux
 fi
 
+# --- Step 2: Apply Configuration ---
+echo "⚙️ Applying the .tmux.conf configuration..."
+# Use our reliable backup-and-link function from the library
 backup_and_link "$SCRIPT_DIR/.tmux.conf" "$HOME/.tmux.conf"
 
-echo "🎉 Конфигурация Tmux успешно применена."
+echo "🎉 Tmux setup complete!"
