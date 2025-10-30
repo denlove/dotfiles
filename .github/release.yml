@@ -1,0 +1,15 @@
+changelog:
+  categories:
+    - title: '✨ New Features & Enhancements'
+      labels:
+        - '✨ feat'
+    - title: '🐛 Bug Fixes'
+      labels:
+        - '🐛 fix'
+    - title: '🔨 Refactoring & Improvements'
+      labels:
+        - '🔨 refactor'
+    - title: '🧹 Housekeeping & Chores'
+      labels:
+        - '🧹 chore'
+        - '📚 docs'
